@@ -24,6 +24,8 @@ def load_data():
 
 df = load_data()
 
+
+
 # Show a multiselect widget with the genres using `st.multiselect`.
 genres = st.multiselect(
     "Genres",
@@ -31,6 +33,9 @@ genres = st.multiselect(
     ["Action", "Adventure", "Biography", "Comedy", "Drama", "Horror"],
 )
 
+
+months = st.slider("months", 1,12)
+                   
 # Show a slider widget with the years using `st.slider`.
 years = st.slider("Years", 1986, 2006, (2000, 2016))
 
