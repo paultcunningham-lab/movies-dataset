@@ -1,1 +1,59 @@
+permissions:
+    contents: write
 
+name: External
+
+on:
+  repository_dispatch:
+    
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository code
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+      
+        
+    - 
+
+    # Step 2: Set up the Python environment
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Set up Chrome
+      uses: browser-actions/setup-chrome@v1
+
+
+
+
+
+    # Step 3: Install dependencies and run the script together
+    - name: Run script and alert Telegram
+      working-directory: repo-1
+      env:
+        # These are now alive and available for BOTH the pip install and the python script execution below
+        
+        : ${{ github.event.client_payload.alertemail }}
+        
+        
+       
+      run: |
+
+       echo "The environment is ${ENV_NAME}"
+       python -m pip install --upgrade pip
+        if [ -f Requirements.txt ]; then pip install -r Requirements.txt; fi
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        python Exp.py
+
+        
+        
+            
+      
+
+    -
