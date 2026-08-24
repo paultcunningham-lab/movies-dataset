@@ -39,7 +39,7 @@ jobs:
       env:
         # These are now alive and available for BOTH the pip install and the python script execution below
         
-       ACCESSSECRET : ${{ github.event.client_payload.ACCESSSECRET }}
+       ACCESSSECRET : ${{ secrets.ACCESSSECRET }}
         
         
        
