@@ -25,13 +25,23 @@ def load_data():
 df = load_data()
 
 
+with st.form(key="text_form"):
+    # Text entry field
+    user_input = st.text_input("Enter your text:")
 
+    # Form submit button
+    submit_button = st.form_submit_button(label="Submit")
+
+# Process the input only when the submit button is clicked
+if submit_button:
+    if user_input.strip():
+        st.success(f"Submitted text: {user_input}")
+    else:
+        st.warning("Please enter some text before submitting.")
 # Show a multiselect widget with the genres using `st.multiselect`.
-genres = st.multiselect(
-    "Genres",
-    df.genre.unique(),
-    ["Action", "Adventure", "Biography", "Comedy", "Drama", "Horror"],
-)
+
+
+genres = user_input.strip()
 
 
 months = st.slider("months", 1,12)
