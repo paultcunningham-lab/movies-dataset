@@ -5,8 +5,8 @@ import io
 # Setup authentication and repository details
 GITHUB_TOKEN = "your_personal_access_token_here"
 OWNER = "your_github_username_or_org"
-REPO = "your_repo_name"
-FILE_PATH = "path/to/your/file.csv"  # e.g., "data/sales.csv"
+REPO = "silver-lamp"
+FILE_PATH = "data.csv"  # e.g., "data/sales.csv"
 BRANCH = "main"  # or "master"
 
 # GitHub REST API URL for raw content
