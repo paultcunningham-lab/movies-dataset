@@ -21,7 +21,7 @@ response = requests.get(url, headers=headers)
 
 if response.status_code == 200:
     # Read directly into a pandas DataFrame
-    df = pd.read_csv(io.StringIO(response.text))
+    df = pd.read_csv(io.StringIO(response.text), header=None)
     print("CSV successfully loaded!")
     print(df.head())
 else:
