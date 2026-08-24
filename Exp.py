@@ -3,7 +3,7 @@ import requests
 import io
 
 # Setup authentication and repository details
-GITHUB_TOKEN = env.ACCESSSECRET
+GITHUB_TOKEN =   os.getenv("ACCESSSECRET")  
 OWNER = "paultcunningham-lab"
 REPO = "silver-lamp"
 FILE_PATH = "data.csv"  # e.g., "data/sales.csv"
