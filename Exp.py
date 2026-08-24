@@ -23,7 +23,7 @@ if response.status_code == 200:
     # Read directly into a pandas DataFrame
     df = pd.read_csv(io.StringIO(response.text), header=None)
     print("CSV successfully loaded!")
-    print(df.head())
+    print(df.iloc(20,4))
 else:
     print(f"Failed to fetch file. Status code: {response.status_code}")
     print(response.json())
