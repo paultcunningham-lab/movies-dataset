@@ -4,7 +4,7 @@ import io
 import os
 import streamlit as st
 # Setup authentication and repository details
-GITHUB_TOKEN =   st.secrets.TARGET_API 
+GITHUB_TOKEN =   st.secrets[TARGET_API] 
 OWNER = "paultcunningham-lab"
 REPO = "silver-lamp"
 FILE_PATH = "data.csv"  # e.g., "data/sales.csv"
