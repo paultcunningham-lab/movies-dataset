@@ -58,6 +58,8 @@ years = st.slider("Years", 1986, 2006, (2000, 2016))
 #df_reshaped = df_reshaped.sort_values(by="year", ascending=False)
 
 df_reshaped=df
+# Filter rows where values in Column Index 0 equal "Apple"
+df_reshaped = df[df.iloc[:, 5] == genres]
 
 # Display the data as a table using `st.dataframe`.
 st.dataframe(
