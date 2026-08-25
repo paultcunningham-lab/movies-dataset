@@ -1,6 +1,7 @@
 import altair as alt
 import pandas as pd
 import streamlit as st
+import Exp
 
 # Show the page title and description.
 st.set_page_config(page_title="Movies dataset", page_icon="🎬")
@@ -22,8 +23,8 @@ def load_data():
     return df
 
 
-df = load_data()
-
+#f = load_data()
+df= Exp.returner()
 
 with st.form(key="text_form"):
     # Text entry field
