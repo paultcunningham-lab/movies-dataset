@@ -24,7 +24,7 @@ def returner():
     if response.status_code == 200:
         # Read directly into a pandas DataFrame
         df = pd.read_csv(io.StringIO(response.text), header=None)
-        print("CSV successfully loaded!")
+        st.write("CSV successfully loaded!")
         print(df.iloc[20,4])
         return df
     else:
