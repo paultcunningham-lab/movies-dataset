@@ -58,7 +58,7 @@ results= brave_search(user_input2, SEARCHKEY, max_results=5)
 df3= pd.DataFrame()
 df33 = pd.DataFrame(results)
 if "title" in df33.columns:
-    df3 = pd.DataFrame(results)[["title"]["url"]
+    df3 = pd.DataFrame(results)[["title"]["url"]]
 
 
 
