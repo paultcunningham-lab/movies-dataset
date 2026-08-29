@@ -56,6 +56,7 @@ if submit_button2:
 searchterm = user_input2
 results= brave_search(user_input2, SEARCHKEY, max_results=5)
 
+df3 = pd.DataFrame(results)[["title"]]
 
 
 
@@ -93,7 +94,11 @@ years = st.slider("Years", 1986, 2006, (2000, 2016))
 df_reshaped=df
 # Filter rows where values in Column Index 0 equal "Apple"
 df_reshaped = df[df.iloc[:, 5] == genres]
+st.dataframe(
+    df3,
+    use_container_width=True,
 
+)
 # Display the data as a table using `st.dataframe`.
 st.dataframe(
     df_reshaped,
