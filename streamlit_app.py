@@ -49,7 +49,7 @@ with st.form(key="text_form2"):
 # Process the input only when the submit button is clicked
 if submit_button2:
     if user_input2.strip():
-        st.success(f"Submitted text: {user_input}")
+        st.success(f"Submitted text: {user_input2}")
     else:
         st.warning("Please enter some text before submitting.")
 
