@@ -2,6 +2,7 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 import Exp
+import requests
 
 # Show the page title and description.
 st.set_page_config(page_title="Movies dataset", page_icon="🎬")
@@ -14,9 +15,20 @@ st.write(
     """
 )
 
-
+def brave_search(query, subscription_token, max_results=5):
+    url = "https://api.search.brave.com/res/v1/web/search"
+    headers = {
+        "Accept": "application/json",
+        "Accept-Encoding": "gzip",
+        "X-Subscription-Token": subscription_token
+    }
+    params = {"q": query}
+    resp = requests.get(url, headers=headers, params=params, timeout=20)
+    resp.raise_for_status()
+    return resp.json().get("web", {}).get("results", [])[:max_results]
 # Load the data from a CSV. We're caching this so it doesn't reload every time the app
 # reruns (e.g. if the user interacts with the widgets).
+
 @st.cache_data
 def load_data():
     df = pd.read_csv("data/movies_genres_summary.csv")
