@@ -97,8 +97,12 @@ df_reshaped=df
 # Filter rows where values in Column Index 0 equal "Apple"
 df_reshaped = df[df.iloc[:, 5] == genres]
 
-st.dataframe(
-    df3
+event = st.dataframe(
+    df3,
+    on_select="rerun",
+    selection_mode="single-row",
+    hide_index=True,
+    use_container_width=True,
     
 
 )
