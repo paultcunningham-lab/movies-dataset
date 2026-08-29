@@ -3,6 +3,7 @@ import pandas as pd
 import streamlit as st
 import Exp
 import requests
+SEARCHKEY = os.getenv("SEARCHKEY")
 
 # Show the page title and description.
 st.set_page_config(page_title="Movies dataset", page_icon="🎬")
@@ -38,6 +39,26 @@ def load_data():
 #f = load_data()
 df= Exp.returner()
 
+with st.form(key="text_form2"):
+    # Text entry field
+    user_input2 = st.text_input("Enter your text:")
+
+    # Form submit button
+    submit_button2 = st.form_submit_button(label="Submit2")
+
+# Process the input only when the submit button is clicked
+if submit_button2:
+    if user_input2.strip():
+        st.success(f"Submitted text: {user_input}")
+    else:
+        st.warning("Please enter some text before submitting.")
+
+searchterm = user_input2
+results= brave_search(user_input2, SEARCHKEY, max_results=5)
+
+
+
+
 with st.form(key="text_form"):
     # Text entry field
     user_input = st.text_input("Enter your text:")
@@ -63,7 +84,7 @@ months = st.slider("months", 1,12)
 years = st.slider("Years", 1986, 2006, (2000, 2016))
 
 # Filter the dataframe based on the widget input and reshape it.
-#df_filtered = df[(df["genre"] == genres) & (df["year"].between(years[0], years[1]))]
+#df_filtered = df[(df["genre"] == genres) & (df["year"].between(years[0], yea,rs[1]))]
 #df_reshaped = df_filtered.pivot_table(
    # index="year", columns="genre", values="gross", aggfunc="sum", fill_value=0
 #)
