@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 import Exp
 import requests
-SEARCHKEY = =   st.secrets["SEARCH_API"] 
+SEARCHKEY =  st.secrets["SEARCH_API"] 
 
 # Show the page title and description.
 st.set_page_config(page_title="Movies dataset", page_icon="🎬")
