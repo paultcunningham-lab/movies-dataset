@@ -102,10 +102,10 @@ st.dataframe(
     column_config={
         "title": st.column_config.TextColumn(
             "Movie Title",
-            width="20px",  # Options: "small", "medium", "large", or pixel values like "300px"
+            width="250px",  # Options: "small", "medium", "large", or pixel values like "300px"
         )},
     
-    use_container_width=True,
+    
 
 )
 # Display the data as a table using `st.dataframe`.
