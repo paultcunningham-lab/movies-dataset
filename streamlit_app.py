@@ -99,6 +99,12 @@ df_reshaped = df[df.iloc[:, 5] == genres]
 
 st.dataframe(
     df3,
+    column_config={
+        "title": st.column_config.TextColumn(
+            "Movie Title",
+            width="medium",  # Options: "small", "medium", "large", or pixel values like "300px"
+        )
+    
     use_container_width=True,
 
 )
