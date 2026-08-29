@@ -25,7 +25,7 @@ def brave_search(query, subscription_token, max_results=5):
     }
     params = {"q": query}
     resp = requests.get(url, headers=headers, params=params, timeout=20)
-    resp.raise_for_status()
+    
     return resp.json().get("web", {}).get("results", [])[:max_results]
 # Load the data from a CSV. We're caching this so it doesn't reload every time the app
 # reruns (e.g. if the user interacts with the widgets).
