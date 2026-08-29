@@ -102,7 +102,7 @@ st.dataframe(
     column_config={
         "title": st.column_config.TextColumn(
             "Movie Title",
-            width="250px",  # Options: "small", "medium", "large", or pixel values like "300px"
+            width="25px",  # Options: "small", "medium", "large", or pixel values like "300px"
         )},
     
     
